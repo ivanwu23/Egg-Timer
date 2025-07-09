@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Egg Timer &lt;3</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="title-bar">
+            <div class="title-bar-content">
+                <img src="img/egg.png" alt="Egg Timer" class="title-logo">
+                <span class="title-text">Egg Timer &lt;3</span>
+            </div>
+            <div class="window-controls">
+                <button class="window-btn minimize-btn" onclick="minimizeWindow()">─</button>
+                <button class="window-btn close-btn" onclick="closeWindow()">✕</button>
+            </div>
+        </div>
+
+        <div id="app">
+             <div id="start-screen" class="screen active">
+                <h1 class="pixel-text title">Egg Timer &lt;3</h1>
+                <div class="egg-bounce">
+                    <img src="img/egg.png" alt="Egg" class="pixel-image bounce-egg">
+                </div>
+                <button class="pixel-button" onclick="showSelection()">Start Cooking!</button>
+             </div>
+
+            <div id="selection-screen" class="screen">
+                <h2 class="pixel-text">Choose Your Egg!</h2>
+                <div class="egg-grid">
+                    <div class="egg-option" onclick="selectEgg('soft', 360)">
+                        <div class="egg-icon">
+                            <img src="img/soft_boiled_egg.png" alt="Soft Boiled Egg" class="pixel-image">
+                        </div>
+                        <span class="pixel-text">Soft Boiled</span>
+                        <span class="time-text">6 min</span>
+                    </div>
+                    <div class="egg-option" onclick="selectEgg('hard', 720)">
+                        <div class="egg-icon">
+                            <img src="img/hard_boiled_egg.png" alt="Hard Boiled Egg" class="pixel-image">
+                        </div>
+                        <span class="pixel-text">Hard Boiled</span>
+                        <span class="time-text">12 min</span>
+                    </div>
+                    <div class="egg-option" onclick="selectEgg('fried', 180)">
+                        <div class="egg-icon">
+                            <img src="img/fried_egg.png" alt="Fried Egg" class="pixel-image">
+                        </div>
+                        <span class="pixel-text">Fried</span>
+                        <span class="time-text">3 min</span>
+                    </div>
+                    <div class="egg-option" onclick="selectEgg('scrambled', 240)">
+                        <div class="egg-icon">
+                            <img src="img/scrambled_egg.png" alt="Scrambled Egg" class="pixel-image">
+                        </div>
+                        <span class="pixel-text">Scrambled</span>
+                        <span class="time-text">4 min</span>
+                    </div>
+                </div>
+                <button class="pixel-button back-btn" onclick="showStart()">Back</button>
+            </div>
+
+            <div id="timer-screen" class="screen">
+                <h2 class="pixel-text" id="egg-type-title">Cooking...</h2>
+                <div class="timer-display">
+                    <div class="pixel-text timer" id="timer">00:00</div>
+                    <div class="egg-cooking" id="cooking-egg">
+                        <img src="img/egg.png" alt="Cooking Egg" class="pixel-image cooking-egg-image">
+                    </div>
+                </div>
+                <div class="timer-controls">
+                    <button class="pixel-button" id="start-btn" onclick="startTimer()">Start</button>
+                    <button class="pixel-button" id="pause-btn" onclick="pauseTimer()" style="display:none;">Pause</button>
+                    <button class="pixel-button" onclick="resetTimer()">Reset</button>
+                </div>
+                <button class="pixel-button back-btn" onclick="showSelection()">Back</button>
+            </div>
+
+            <div id="complete-screen" class="screen">
+                <h2 class="pixel-text">Your Egg is Ready!</h2>
+                <div class="complete-egg" id="complete-egg">🥚</div>
+                <button class="pixel-button" onclick="showSelection()">Cook Another!</button>
+            </div>
+        </div>
+
+        <button class="mute-button" id="mute-btn" onclick="toggleMute()">🔊</button>
+
+        <audio id="click-sound" preload="auto">
+            <source src="audio/click.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="background-music" preload="auto" loop>
+            <source src="audio/music.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="complete-sound" preload="auto" loop>
+            <source src="audio/Goofy ahh Ringtone.mp3" type="audio/mpeg">
+        </audio>
+
+        <script src="script.js"></script>
+    </body>
+</html>

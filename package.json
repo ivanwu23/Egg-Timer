@@ -1,0 +1,17 @@
+{
+    "name": "egg-timer",
+    "version": "1.0.0",
+    "description": "Egg Timer <3 - A cute egg cooking timer",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder"
+    },
+    "keywords": ["egg", "timer", "cooking"],
+    "author": "Ivan Wu",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "27.0.0",
+        "electron-builder": "24.0.0"
+    }
+}
