@@ -30,6 +30,29 @@ A cute pixel art egg cooking timer built with Electron. Perfect for timing your 
 - Draggable title bar
 - Custom app icon
 
+## Installation
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm
+
+### Setup
+1. Clone or download this repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+```bash
+npm start
+```
+
+### Building
+```bash
+npm run build
+```
+
 ## How to Use
 
 1. **Start the app** - Click "Start Cooking!" 
